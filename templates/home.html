@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CaringAI - Ask questions about being a loving parent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        #query {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #submit:hover {
+            background-color: #0056b3;
+        }
+        .chat {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .chat h3 {
+            margin: 0;
+            color: #007BFF;
+        }
+        .chat p {
+            margin: 5px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CaringAI - Ask questions about being a loving parent</h1>
+        <h2>NOTE: one book is included:  13_Things_Mentally_Strong_Parents_Dont_Do</h2>
+        <form action="/" method="post">
+            <input type="text" id="query" name="query" placeholder="Enter your question here">
+            <input type="submit" id="submit" value="Ask">
+        </form>
+        <div id="chat_log">
+            {% if chat_log %}
+            {% for chat in chat_log %}
+            <div class="chat">
+                <h3>You asked:</h3>
+                <p>{{ chat.query }}</p>
+                <h3>Answer:</h3>
+                <p>{{ chat.answer }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
