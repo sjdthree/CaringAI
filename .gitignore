@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+pdfs/
 wheels/
 share/python-wheels/
 *.egg-info/
@@ -64,6 +65,9 @@ db.sqlite3-journal
 # Flask stuff:
 instance/
 .webassets-cache
+
+.pdf
+.json
 
 # Scrapy stuff:
 .scrapy
